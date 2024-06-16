@@ -110,3 +110,18 @@ body {
     right: 0;
     z-index: -1;
 }
+
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 997px;
+    }
+    .main-title {
+        font-size: 86px;
+    }
+}
