@@ -5,10 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles/style.css" />
+        <script src="scripts/script.js" defer></script>
         <title>Cookies</title>
     </head>
     <body>
         <main class="main">
+            <div class="currency" title="изменить валюту" id="change-currency">$</div>
             <header class="header">
                 <div class="container">
                     <div class="logo">
@@ -16,9 +18,11 @@
                     </div>
                     <nav class="menu">
                         <ul class="menu-list">
-                            <li class="menu-item"><a href="#">Каталог</a></li>
-                            <li class="menu-item"><a href="#">О нас</a></li>
-                            <li class="menu-item"><a href="#">Оформление заказа</a></li>
+                            <li class="menu-item"><a data-link="products">Каталог</a></li>
+                            <li class="menu-item"><a data-link="love">О нас</a></li>
+                            <li class="menu-item">
+                                <a data-link="order">Оформление заказа</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -29,18 +33,19 @@
                     <div class="main-info">
                         <h1 class="main-title">Магия вкуса в&nbsp;каждой крошке</h1>
                         <p class="main-text">
-                            Наши рецепты вдыхают жизнь в изысканность ингредиентов: ароматное натуральное масло, свежие
-                            сливки, чистый мёд и отборная мука. Мы тщательно отбираем каждый компонент премиального
-                            печенья, стремясь подарить вам истинное кулинарное наслаждение.
+                            Наши рецепты вдыхают жизнь в изысканность ингредиентов: ароматное
+                            натуральное масло, свежие сливки, чистый мёд и отборная мука. Мы
+                            тщательно отбираем каждый компонент премиального печенья, стремясь
+                            подарить вам истинное кулинарное наслаждение.
                         </p>
                         <div class="main-action">
-                            <button class="button">Заказать</button>
+                            <button class="button" id="main-action-button">Заказать</button>
                         </div>
                     </div>
                     <img class="main-image" src="images/cookie.png" alt="Хрустящая печенька" />
                 </div>
             </section>
-            <section class="products">
+            <section class="products" id="products">
                 <div class="container">
                     <img class="line-2" src="images/line2.png" alt="линия фона 2" />
                     <h2 class="common-title">Выберите печенье</h2>
@@ -52,13 +57,18 @@
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Лучшие друзья</h3>
                                 <p class="products-item-text">
-                                    Печенье, с которого все началось! Наше фирменное печенье с шоколадной крошкой
-                                    и грецкими орехами хрустящее снаружи с достаточно толстой и липкой серединкой.
+                                    Печенье, с которого все началось! Наше фирменное печенье
+                                    с шоколадной крошкой и грецкими орехами хрустящее снаружи
+                                    с достаточно толстой и липкой серединкой.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">20 $</div>
-                                        <div class="products-item-weight">2&nbsp;шт./ 200&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="20">
+                                            20 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            2&nbsp;шт./ 200&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -67,18 +77,26 @@
                         <!-- products/item 1 -->
                         <div class="products-item">
                             <div class="products-item-image">
-                                <img src="images/products/2.png" alt="Печенье: Шоколадный француз" />
+                                <img
+                                    src="images/products/2.png"
+                                    alt="Печенье: Шоколадный француз"
+                                />
                             </div>
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Шоколадный француз</h3>
                                 <p class="products-item-text">
-                                    Это печенье, изготовленное из тёмного французского какао и полусладкой шоколадной
-                                    стружки, наверняка удовлетворит даже самого заядлого любителя шоколада.
+                                    Это печенье, изготовленное из тёмного французского какао
+                                    и полусладкой шоколадной стружки, наверняка удовлетворит
+                                    даже самого заядлого любителя шоколада.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">24 $</div>
-                                        <div class="products-item-weight">2&nbsp;шт./ 200&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="24">
+                                            24 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            2&nbsp;шт./ 200&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -87,18 +105,26 @@
                         <!-- products/item 2 -->
                         <div class="products-item">
                             <div class="products-item-image">
-                                <img src="images/products/3.png" alt="Печенье: Овсянка с изюмом, Сэр!" />
+                                <img
+                                    src="images/products/3.png"
+                                    alt="Печенье: Овсянка с изюмом, Сэр!"
+                                />
                             </div>
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Овсянка с изюмом, Сэр!</h3>
                                 <p class="products-item-text">
-                                    Это сдобное маслянистое печенье весом шесть унций каждое, золотисто-коричневое
-                                    снаружи, влажное внутри и наполненное пухлым сладким изюмом.
+                                    Это сдобное маслянистое печенье весом шесть унций каждое,
+                                    золотисто-коричневое снаружи, влажное внутри и наполненное
+                                    пухлым сладким изюмом.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">18 $</div>
-                                        <div class="products-item-weight">2&nbsp;шт./ 200&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="18">
+                                            18 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            2&nbsp;шт./ 200&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -107,18 +133,26 @@
                         <!-- products/item 3 -->
                         <div class="products-item">
                             <div class="products-item-image">
-                                <img src="images/products/4.png" alt="Печенье: Шоколадное наслаждение" />
+                                <img
+                                    src="images/products/4.png"
+                                    alt="Печенье: Шоколадное наслаждение"
+                                />
                             </div>
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Шоколадное наслаждение</h3>
                                 <p class="products-item-text">
-                                    Идеально хрустящее снаружи и достаточно густое и липкое в центре, это печенье
-                                    наполнено полусладкой и тёмной шоколадной стружкой, придающей богатую глубину вкуса.
+                                    Идеально хрустящее снаружи и достаточно густое и липкое
+                                    в центре, это печенье наполнено полусладкой и тёмной шоколадной
+                                    стружкой, придающей богатую глубину вкуса.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">24 $</div>
-                                        <div class="products-item-weight">2&nbsp;шт./ 200&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="24">
+                                            24 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            2&nbsp;шт./ 200&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -132,13 +166,17 @@
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Арахисовый рай</h3>
                                 <p class="products-item-text">
-                                    Сладкое, пикантное и идеально сбалансированное печенье удовлетворяет тягу любителей
-                                    арахисового масла и шоколада.
+                                    Сладкое, пикантное и идеально сбалансированное печенье
+                                    удовлетворяет тягу любителей арахисового масла и шоколада.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">20 $</div>
-                                        <div class="products-item-weight">2&nbsp;шт./ 200&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="20">
+                                            20 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            2&nbsp;шт./ 200&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -147,19 +185,27 @@
                         <!-- products/item 5 -->
                         <div class="products-item">
                             <div class="products-item-image">
-                                <img src="images/products/6.png" alt="Печенье: Шоколадный ореховый деликатес" />
+                                <img
+                                    src="images/products/6.png"
+                                    alt="Печенье: Шоколадный ореховый деликатес"
+                                />
                             </div>
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Шоколадный ореховый деликатес</h3>
                                 <p class="products-item-text">
-                                    Наша фирменная рецептура печенья с шоколадными крошками и грецкими орехами
-                                    гарантирует незабываемый вкусовой опыт. Каждое печенье хрустит снаружи,
-                                    но раскрывает внутри нежную сердцевину.
+                                    Наша фирменная рецептура печенья с шоколадными крошками
+                                    и грецкими орехами гарантирует незабываемый вкусовой опыт.
+                                    Каждое печенье хрустит снаружи, но раскрывает внутри нежную
+                                    сердцевину.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">18 $</div>
-                                        <div class="products-item-weight">2&nbsp;шт./ 200&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="18">
+                                            18 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            2&nbsp;шт./ 200&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -168,18 +214,26 @@
                         <!-- products/item 6 -->
                         <div class="products-item">
                             <div class="products-item-image">
-                                <img src="images/products/7.png" alt="Печенье: Ассорти фирменного печенья" />
+                                <img
+                                    src="images/products/7.png"
+                                    alt="Печенье: Ассорти фирменного печенья"
+                                />
                             </div>
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Ассорти фирменного печенья</h3>
                                 <p class="products-item-text">
-                                    Зачем выбирать один, когда можно получить их все? Наш классический ассортимент
-                                    печенья включает в себя по одному из четырёх оригинальных вкусов печенья.
+                                    Зачем выбирать один, когда можно получить их все?
+                                    Наш классический ассортимент печенья включает в себя по одному
+                                    из четырёх оригинальных вкусов печенья.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">36 $</div>
-                                        <div class="products-item-weight">4&nbsp;шт./ 400&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="36">
+                                            36 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            4&nbsp;шт./ 400&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -193,14 +247,19 @@
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Лимонное печенье</h3>
                                 <p class="products-item-text">
-                                    Весна уже не за горами, но нам не терпелось подарить вам немного солнечного света:
-                                    наше первое лимонное печенье. Это лакомство жевательное, лимонное, не слишком
-                                    сладкое и даже немного… освежающее?
+                                    Весна уже не за горами, но нам не терпелось подарить вам немного
+                                    солнечного света: наше первое лимонное печенье. Это лакомство
+                                    жевательное, лимонное, не слишком сладкое и даже немного…
+                                    освежающее?
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">33 $</div>
-                                        <div class="products-item-weight">4&nbsp;шт./ 400&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="33">
+                                            33 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            4&nbsp;шт./ 400&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -214,13 +273,17 @@
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Любители шоколада</h3>
                                 <p class="products-item-text">
-                                    Вам больше не нужно выбирать фаворитов. Мы сделали этот набор для всех людей,
-                                    которые действительно любят шоколад…
+                                    Вам больше не нужно выбирать фаворитов. Мы сделали этот набор
+                                    для всех людей, которые действительно любят шоколад…
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">38 $</div>
-                                        <div class="products-item-weight">4&nbsp;шт./ 400&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="38">
+                                            38 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            4&nbsp;шт./ 400&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -234,13 +297,18 @@
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Карамель и кокос</h3>
                                 <p class="products-item-text">
-                                    Побалуйте себя кокосовым, маслянистым, карамельным печеньем, которое обладает
-                                    невиданным ранее вкусом и текстурой. Наслаждение круглый год.
+                                    Побалуйте себя кокосовым, маслянистым, карамельным печеньем,
+                                    которое обладает невиданным ранее вкусом и текстурой.
+                                    Наслаждение круглый год.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">33 $</div>
-                                        <div class="products-item-weight">4&nbsp;шт./ 400&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="33">
+                                            33 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            4&nbsp;шт./ 400&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -249,18 +317,25 @@
                         <!-- products/item 10 -->
                         <div class="products-item">
                             <div class="products-item-image">
-                                <img src="images/products/11.png" alt="Печенье: Веганское с шоколадной крошкой" />
+                                <img
+                                    src="images/products/11.png"
+                                    alt="Печенье: Веганское с шоколадной крошкой"
+                                />
                             </div>
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Веганское с шоколадной крошкой</h3>
                                 <p class="products-item-text">
-                                    Наше веганское безглютеновое печенье содержит кусочки хрустящих грецких орехов
-                                    и полусладкую веганскую шоколадную стружку.
+                                    Наше веганское безглютеновое печенье содержит кусочки хрустящих
+                                    грецких орехов и полусладкую веганскую шоколадную стружку.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">39 $</div>
-                                        <div class="products-item-weight">4&nbsp;шт./ 400&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="39">
+                                            39 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            4&nbsp;шт./ 400&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -269,19 +344,27 @@
                         <!-- products/item 11 -->
                         <div class="products-item">
                             <div class="products-item-image">
-                                <img src="images/products/12.png" alt="Печенье: Крем-брюле ореховое печенье" />
+                                <img
+                                    src="images/products/12.png"
+                                    alt="Печенье: Крем-брюле ореховое печенье"
+                                />
                             </div>
                             <div class="products-item-details">
                                 <h3 class="products-item-title">Крем-брюле ореховое печенье</h3>
                                 <p class="products-item-text">
-                                    Используя уникальную смесь ингредиентов, мы создали печенье с кусочками крем-брюле и
-                                    миндальными орехами, которое обещает неповторимые гастрономические ощущения. Каждый
-                                    кусочек обладает хрустящей корочкой и тает во рту.
+                                    Используя уникальную смесь ингредиентов, мы создали печенье с
+                                    кусочками крем-брюле и миндальными орехами, которое обещает
+                                    неповторимые гастрономические ощущения. Каждый кусочек обладает
+                                    хрустящей корочкой и тает во рту.
                                 </p>
                                 <div class="products-item-extra">
                                     <div class="products-item-info">
-                                        <div class="products-item-price">35 $</div>
-                                        <div class="products-item-weight">4&nbsp;шт./ 400&nbsp;гр.</div>
+                                        <div class="products-item-price" data-base-price="35">
+                                            35 $
+                                        </div>
+                                        <div class="products-item-weight">
+                                            4&nbsp;шт./ 400&nbsp;гр.
+                                        </div>
                                     </div>
                                     <button class="button violet-button">Заказать</button>
                                 </div>
@@ -291,17 +374,20 @@
                     </div>
                 </div>
             </section>
-            <section class="love">
+            <section class="love" id="love">
                 <div class="container">
                     <h2 class="common-title">Пекарня с любовью</h2>
                     <div class="love-items">
                         <div class="love-item love-item-white">
-                            <h3 class="love-item-title">Приготовлено с заботой, чтобы радовать вас каждый день</h3>
+                            <h3 class="love-item-title">
+                                Приготовлено с заботой, чтобы радовать вас каждый день
+                            </h3>
                             <p class="love-item-text">
-                                Мы с гордостью представляем наше печенье, которое мы выпекаем вручную каждый день
-                                с 1995&nbsp;года, используя только лучшие ингредиенты. Погрузитесь в мир изысканных
-                                лакомств, приготовленных с применением передовых технологий, и насладитесь
-                                их неповторимым вкусом.
+                                Мы с гордостью представляем наше печенье, которое мы выпекаем
+                                вручную каждый день с 1995&nbsp;года, используя только лучшие
+                                ингредиенты. Погрузитесь в мир изысканных лакомств, приготовленных
+                                с применением передовых технологий, и насладитесь их неповторимым
+                                вкусом.
                             </p>
                         </div>
                         <div class="love-item love-item-image">
@@ -310,26 +396,36 @@
                     </div>
                 </div>
             </section>
-            <section class="order">
+            <section class="order" id="order">
                 <img class="line-3" src="images/line3.png" alt="линия фона 3" />
                 <div class="container">
                     <h2 class="common-title">Закажите печенье</h2>
-                    <img class="order-bg-image" src="images/breadcrumbs.png" alt="фон из крошек печенья" />
+                    <img
+                        class="order-bg-image"
+                        src="images/breadcrumbs.png"
+                        alt="фон из крошек печенья"
+                    />
                     <div class="order-block">
-                        <form action="" class="order-form">
+                        <form class="order-form">
                             <div class="order-form-text">
-                                Откройте для себя волшебство вкуса с нашим премиальным печеньем! Закажите прямо сейчас
-                                и окунитесь в мир сладких наслаждений.
+                                Откройте для себя волшебство вкуса с нашим премиальным печеньем!
+                                Закажите прямо сейчас и окунитесь в мир сладких наслаждений.
                             </div>
                             <div class="order-form-inputs">
-                                <input type="text" placeholder="Выберите печенье" />
-                                <input type="text" placeholder="Ваше имя" />
-                                <input type="text" placeholder="Ваш телефон" />
-                                <button class="button violet-button">Оформить заказ</button>
+                                <input type="text" placeholder="Выберите печенье" id="product" />
+                                <input type="text" placeholder="Ваше имя" id="name" />
+                                <input type="text" placeholder="Ваш телефон" id="phone" />
+                                <button class="button violet-button" id="send-order">
+                                    Оформить заказ
+                                </button>
                             </div>
                         </form>
                         <div class="order-block-image">
-                            <img class="order-image" src="images/order.png" alt="Многообразие печенья" />
+                            <img
+                                class="order-image"
+                                src="images/order.png"
+                                alt="Многообразие печенья"
+                            />
                         </div>
                     </div>
                 </div>

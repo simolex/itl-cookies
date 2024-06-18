@@ -54,6 +54,7 @@ body {
     border-radius: 60px;
     background-color: var(--primary-color);
     color: var(--second-color);
+
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s;
@@ -70,6 +71,40 @@ body {
 
 .button.violet-button:hover {
     background-color: var(--second-button-hover);
+}
+
+.currency {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    text-align: center;
+    padding: 5px 10px;
+    height: 25px;
+    min-width: 25px;
+    cursor: pointer;
+    line-height: 28px;
+    border: 1px solid var(--price-color);
+    border-radius: 50px;
+    transform: scale(1);
+    animation: pulse 2s infinite;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    user-select: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }
 
 .common-title {
